@@ -103,10 +103,10 @@ module.exports = class TheiaExtension extends Base {
             type: String,
             default: '2.4.0'
         });
-        this.option('skipInstall', {
+        this.option('skip-install', {
             description: 'Skip install after generation',
-            type: String,
-            default: '2.4.0'
+            type: Boolean,
+            default: false
         });
     }
 
@@ -128,7 +128,7 @@ module.exports = class TheiaExtension extends Base {
                 choices: [
                     { value: ExtensionType.HelloWorld, name: 'Hello World' },
                     { value: ExtensionType.Widget, name: 'Widget' },
-                    { value: ExtensionType.LabelProvider, name: 'Label provider' }
+                    { value: ExtensionType.LabelProvider, name: 'LabelProvider' }
                 ] 
             });
             (this.options as any).extensionType = answer.type;
